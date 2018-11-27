@@ -1,0 +1,14 @@
+{
+  "name": "AoC2018",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha test --recursive"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.0.0"
+  }
+}
