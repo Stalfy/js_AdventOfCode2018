@@ -20,12 +20,20 @@ async function solveB (puzzle) {
 
 async function displayA (output) {
     return new Promise(resolve => {
-        console.log(`Puzzle A result : ${output}`);
+        console.log(`Puzzle A result: ${output}`);
+        resolve();
+    });
+}
+
+async function displayB (output) {
+    return new Promise(resolve => {
+        console.log(`Puzzle B result: ${output}`);
         resolve();
     });
 }
 
 solveA(input)
-    .then((x) => displayA(x))
-    .then(solveB(input))
+    .then((resultA) => displayA(resultA))
+    .then(() => solveB(input))
+    .then((resultB) => displayB(resultB))
     .then(() => { console.log('DONE'); });
