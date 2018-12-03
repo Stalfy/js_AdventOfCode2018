@@ -5,6 +5,7 @@ var solver = require(`./solvers/day${puzzleNo}`);
 var input = fs.readFileSync(`./inputs/${puzzleNo}.txt`, 'UTF-8');
 
 async function solveA (puzzle) {
+    console.time('Problem A');
     return new Promise(resolve => {
         let result = solver.solveA(puzzle);
         resolve(result);
@@ -12,6 +13,7 @@ async function solveA (puzzle) {
 }
 
 async function solveB (puzzle) {
+    console.time('Problem B');
     return new Promise(resolve => {
         let result = solver.solveB(puzzle);
         resolve(result);
@@ -19,6 +21,7 @@ async function solveB (puzzle) {
 }
 
 async function displayA (output) {
+    console.timeEnd('Problem A');
     return new Promise(resolve => {
         console.log(`Puzzle A result: ${output}`);
         resolve();
@@ -26,6 +29,7 @@ async function displayA (output) {
 }
 
 async function displayB (output) {
+    console.timeEnd('Problem B');
     return new Promise(resolve => {
         console.log(`Puzzle B result: ${output}`);
         resolve();
