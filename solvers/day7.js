@@ -66,9 +66,14 @@ function updateProgress (progress, assignations, minTaskTime) {
             if (undefined === progress[task]) {
                 progress[task] = minTaskTime + task.charCodeAt(0) - 64;
             }
-
-            progress[task]--;
         });
+
+    let step = Math.min(...Object.values(progress));
+    for (let task in progress) {
+        progress[task] -= step;
+    }
+
+    return step;
 }
 
 function completeTasks (progress, assignations, remainingTasks) {
@@ -96,10 +101,10 @@ function timeCompletion (minTaskTime, workersCount) {
     let remainingTasks = Object.keys(prequisites).sort();
     while(0 !== remainingTasks.length) {
         assignTasks (assignations, remainingTasks, workersCount);
-        updateProgress (progress, assignations, minTaskTime);
+        let timeStep = updateProgress (progress, assignations, minTaskTime);
         remainingTasks = completeTasks (progress, assignations, remainingTasks);
 
-        timer++;
+        timer += timeStep;
     }
 
     return timer;
