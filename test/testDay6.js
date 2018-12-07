@@ -8,7 +8,7 @@ input += '3, 4\n';
 input += '5, 5\n';
 input += '8, 9\n';
 
-describe('Day 5', function() {
+describe('Day 6', function() {
     describe('Puzzle A', function() {
         it('Should return 17', function() {
             let result = solver.solveA(input);
