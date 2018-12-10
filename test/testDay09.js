@@ -1,7 +1,7 @@
 var assert = require('assert');
 var solver = require('../solvers/day9');
 
-describe('Day 8', function() {
+describe('Day 9', function() {
     describe('Puzzle A', function() {
         it('Should return 32 with input 9 players; last marble is worth 25 points', function() {
             let input = '9 players; last marble is worth 25 points\n';

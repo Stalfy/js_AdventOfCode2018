@@ -1,4 +1,3 @@
-
 function Marble(value) {
     this.value = value;
     this.previous = undefined;
